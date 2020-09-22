@@ -127,9 +127,6 @@ a = torch.Tensor(1, 3, 32, 32).to(device)
 out = vgg16(a)
 print(out)
 
-'''
-criterion, optimizer lr_sche 정의
-'''
 criterion = nn.CrossEntropyLoss().to(device)
 optimizer = optim.SGD(vgg16.parameters(), lr = 0.005, momentum = 0.9)
 lr_sche = optim.lr_scheduler.StepLR(optimizer, step_size = 5, gamma = 0.9)
